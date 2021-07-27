@@ -1209,6 +1209,7 @@ video#video_background {
 }
 
 .up {
+	display: none;
 	position: fixed;
 	bottom: 50px;
 	right: 50px;
