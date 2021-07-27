@@ -7,19 +7,19 @@ const smoothScrollTo = () => {
     heightHeaderWrapper = headerWrapper.offsetHeight,
     servicesSectionTop = servicesSection.offsetTop;
 
-  window.addEventListener('scroll',() =>{
-    let scrollTop = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
 
     if (scrollTop >= servicesSectionTop - heightHeaderWrapper) {
-      if(buttonUp.classList.contains('animate__zoomOut')) buttonUp.classList.remove('animate__zoomOut');
+      if (buttonUp.classList.contains('animate__zoomOut')) buttonUp.classList.remove('animate__zoomOut');
       buttonUp.style.display = 'block';
       buttonUp.classList.add('animate__zoomInDown');
     } else {
       buttonUp.classList.remove('animate__zoomInDown');
       buttonUp.classList.add('animate__zoomOut');
-      setTimeout(()=> {
+      setTimeout(() => {
         buttonUp.style.display = 'none';
-      },200);
+      }, 200);
     }
   });
 
@@ -31,12 +31,12 @@ const smoothScrollTo = () => {
     });
   });
 
-  links.forEach(link =>{
+  links.forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
 
       const blockID = event.target.getAttribute('href').slice(1);
-      let heightElement = document.getElementById(blockID).offsetTop;
+      const heightElement = document.getElementById(blockID).offsetTop;
       window.scrollTo({
         behavior: "smooth",
         left: 0,
