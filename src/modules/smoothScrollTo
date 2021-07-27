@@ -7,9 +7,6 @@ const smoothScrollTo = () => {
     heightHeaderWrapper = headerWrapper.offsetHeight,
     servicesSectionTop = servicesSection.offsetTop;
 
-
-  console.log(window.scrollY);
-
   window.addEventListener('scroll',() =>{
     let scrollTop = window.scrollY;
 
