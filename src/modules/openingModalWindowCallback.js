@@ -5,7 +5,7 @@ const openingModalWindowCallback = () => {
     // функция закрытия модального окна.
     const closePopUpCallback = event => {
         const target = event.target;
-        if (target.matches('.modal-overlay') || target.matches('.modal-close img')) {
+        if (target.matches('.modal-overlay') || target.closest('.modal-close')) {
             modalOverlay.style.display = 'none';
             modalCallback.classList.add('animate__zoomOut');
             // задержка, чтобы успела отработать анимация закрытия окна
