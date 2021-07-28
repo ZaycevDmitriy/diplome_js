@@ -20,7 +20,6 @@ const topSlider = () => {
   addDots();
 
   const dots = document.querySelectorAll('.dot');
-  console.log(dots);
 
   const removeClass = (items, nameClass) => {
     items.forEach(i => {
