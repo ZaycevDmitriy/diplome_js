@@ -5,6 +5,7 @@ import topSlider from "./modules/topSlider";
 import accordion from "./modules/accordion";
 import openingModalWindowApplication from "./modules/openingModalWindowApplication";
 import openingModalFeedback from "./modules/openingModalFeedback";
+import sliderCarousel from "./modules/sliderСarousel";
 
 openingModalWindowCallback();
 smoothScrollTo();
@@ -13,3 +14,4 @@ topSlider();
 accordion();
 openingModalWindowApplication();
 openingModalFeedback();
+sliderCarousel()
