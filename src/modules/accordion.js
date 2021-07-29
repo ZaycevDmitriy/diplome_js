@@ -1,31 +1,20 @@
 const accordion = () => {
   const accordionSection = document.querySelector('.accordeon'),
-    accordionElems = document.querySelectorAll('.element'),
-    accordionElemsContent = document.querySelectorAll('.element-content');
-
-  const closeElem = () => {
-    accordionElems.forEach(i => {
-      i.classList.remove('active');
-    });
-
-    accordionElemsContent.forEach(i => {
-      i.style.display = 'none';
-    });
-  };
+    accordionElems = accordionSection.querySelectorAll('.element'),
+    titleAcc = accordionSection.querySelectorAll('.title');
 
   accordionSection.addEventListener('click', event => {
     const target = event.target;
 
-    if (target.matches('.title')) {
-      if (target.parentElement.classList.contains('active')) {
-        closeElem();
+    titleAcc.forEach((item, index) => {
+      if (target === item) {
+        accordionElems[index].classList.toggle('active');
       } else {
-        closeElem();
-        target.parentElement.classList.add('active');
-        target.nextElementSibling.style.display = 'block';
+        accordionElems[index].classList.remove('active');
       }
-    }
+    });
   });
+
 };
 
 export  default  accordion;

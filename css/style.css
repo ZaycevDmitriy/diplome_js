@@ -256,10 +256,15 @@ a.absolute {
 }
 .modal {
 	display: none;
+	position: fixed;
+	top: 15%;
+	left: 50%;
+	transform: translateX(-50%);
 	width: 460px;
 	max-width: 100%;
 	background: #fff;
 	padding: 55px 25px 35px;
+	z-index: 99;
 }
 .modal-overlay {
 	display: none;
@@ -1025,7 +1030,7 @@ video#video_background {
 .accordeon .element.active .title:before {
 	background: url(../images/minus.png) 50% 50% no-repeat #333;
 }
-.accordeon > div:first-of-type .element-content {
+.accordeon > .element.active .element-content {
 	display: block;
 }
 .accordeon .element .title:hover:before {
