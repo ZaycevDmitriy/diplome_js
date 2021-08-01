@@ -428,7 +428,7 @@
 								</div>
 								<div class="title">Самые низкие цены</div>
 								<div class="text">
-									По своей сути рыбатекст является альтернативой традиционному lorem ipsum
+									По своей сути рыба текст является альтернативой традиционному lorem ipsum
 								</div>
 							</div>
 						</div>
@@ -439,7 +439,7 @@
 								</div>
 								<div class="title">Приедем к вам за 45 минут</div>
 								<div class="text">
-									По своей сути рыбатекст является альтернативой традиционному lorem ipsum
+									По своей сути рыба текст является альтернативой традиционному lorem ipsum
 								</div>
 							</div>
 						</div>
@@ -623,7 +623,7 @@
 
 	<div class="modal-overlay"></div>
 	<!-- * * * * * * Callback modal block * * * * * * -->
-	<div class="modal-callback animate__animated" id="callback">
+	<div class="modal modal-callback animate__animated" id="callback">
 		<div class="modal-close">
 			<img src="images/close_icon_green.svg" alt="modal-close">
 		</div>
@@ -632,11 +632,15 @@
 		<div class="rf">
 			<form action="" name="form-callback">
 				<div class="form-group">
-					<input type="text" name="fio" class="form-control" placeholder="Ваше имя">
+					<label>
+						<input type="text" name="fio" class="form-control" placeholder="Ваше имя">
+					</label>
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*">
+					<label>
+						<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*">
+					</label>
 				</div>
 				<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
 				<div>
@@ -658,15 +662,21 @@
 		<div class="rf">
 			<form action="" name="form-feedback">
 				<div class="form-group">
-					<input type="text" name="fio" class="form-control" placeholder="Ваше имя">
+					<label>
+						<input type="text" name="fio" class="form-control" placeholder="Ваше имя">
+					</label>
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*">
+					<label>
+						<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*">
+					</label>
 				</div>
 
 				<div class="form-group">
-					<textarea name="message" class="form-control required" placeholder="Сообщение*"></textarea>
+					<label>
+						<textarea name="message" class="form-control required" placeholder="Сообщение*"></textarea>
+					</label>
 				</div>
 
 				<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
@@ -689,14 +699,18 @@
 		<div class="rf">
 			<form name="application">
 				<div class="form-group">
-					<input type="text" name="service_name" id="applicationInput" class="form-control"
-						readonly="readonly">
+					<label for="applicationInput"></label><input type="text" name="service_name" id="applicationInput" class="form-control"
+																 readonly="readonly">
 				</div>
 				<div class="form-group">
-					<input name="fio" type="text" class="form-control required" placeholder="Ваше имя *">
+					<label>
+						<input name="fio" type="text" class="form-control required" placeholder="Ваше имя *">
+					</label>
 				</div>
 				<div class="form-group">
-					<input name="tel" type="text" class="form-control required tel" placeholder="Ваш  телефон *">
+					<label>
+						<input name="tel" type="text" class="form-control required tel" placeholder="Ваш  телефон *">
+					</label>
 				</div>
 				<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
 				<div>
@@ -709,11 +723,16 @@
 
 
 	<div class="modal" id="responseMessage">
-		<div class="modal-close">
-			<img src="images/close_icon_green.svg" alt="modal-close">
-		</div>
 		<div class="title-h2">Статус отправки формы:</div>
-		<div class="modal-content"></div>
+		<div class="modal-content">
+			<div class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div>
 		<div class="push25"></div>
 		<a href="#" class="button btn fancyClose">ok</a>
 	</div>

@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import openingModalWindowCallback from "./modules/openingModalWindowCallback";
 import smoothScrollTo from "./modules/smoothScrollTo";
 import openingMobileMenu from "./modules/openingMobileMenu";
@@ -6,6 +7,8 @@ import accordion from "./modules/accordion";
 import openingModalWindowApplication from "./modules/openingModalWindowApplication";
 import openingModalFeedback from "./modules/openingModalFeedback";
 import sliderCarousel from "./modules/sliderСarousel";
+import validateForms from "./modules/validateForms";
+import sendForms from "./modules/sendForms";
 
 openingModalWindowCallback();
 smoothScrollTo();
@@ -14,4 +17,6 @@ topSlider();
 accordion();
 openingModalWindowApplication();
 openingModalFeedback();
-sliderCarousel()
+sliderCarousel();
+validateForms();
+sendForms();
