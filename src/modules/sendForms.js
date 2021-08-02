@@ -1,6 +1,5 @@
 const sendForms = () => {
   const errorMessage = 'Что-то пошло не так...',
-    loadMessage = 'Загрузка...',
     successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
   const forms = document.querySelectorAll('form');
   const modalOverlay = document.querySelector('.modal-overlay'),
@@ -9,9 +8,9 @@ const sendForms = () => {
     load = responseMessageModal.querySelector('.spinner'),
     closeBtn = responseMessageModal.querySelector('.fancyClose');
   const statusMessage = document.createElement('div');
-  statusMessage.style.cssText = `font-size: 2rem; color: #2fab6d`;
+  statusMessage.style.cssText = `font-size: 2rem`;
 
-  const postData = async (data, cb, cbError) => {
+  const postData = async (data, cb) => {
 
     const response = await fetch('./server.php', {
       method: 'POST',
@@ -22,11 +21,9 @@ const sendForms = () => {
     });
 
     if (!response.ok) {
-      cbError(response.status);
+      throw new Error(`Failed to fetch`);
     }
-
     cb(response.status);
-
   };
 
   const closedWindow = () => {
@@ -45,24 +42,27 @@ const sendForms = () => {
       responseMessageModal.style.display = 'block';
       load.style.display = 'block';
 
-      // statusMessage.textContent = loadMessage;
       const formData = new FormData(form);
       const data = {};
       formData.forEach(((value, key) => data[key] = value));
 
+      const addStatusMessage = message => {
+        load.style.display = 'none';
+        modalContent.append(statusMessage);
+        if (message === errorMessage) statusMessage.style.color = 'red';
+        if (message === successMessage) statusMessage.style.color = '#2fab6d';
+        statusMessage.textContent = message;
+        closeBtn.addEventListener('click', closedWindow);
+        form.reset();
+      };
+
       postData(data,
         () => {
-          load.style.display = 'none';
-          modalContent.append(statusMessage);
-          statusMessage.textContent = successMessage;
-          closeBtn.addEventListener('click', closedWindow);
-          form.reset();
-        },
-        error => {
-          statusMessage.textContent = errorMessage;
-          console.error(error);
-        }
-      );
+          addStatusMessage(successMessage);
+        }).catch(error => {
+        addStatusMessage(errorMessage);
+        console.error(error);
+      });
     });
   });
 };
