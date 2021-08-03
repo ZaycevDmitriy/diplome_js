@@ -9,6 +9,7 @@ import openingModalFeedback from "./modules/openingModalFeedback";
 import sliderCarousel from "./modules/sliderСarousel";
 import validateForms from "./modules/validateForms";
 import sendForms from "./modules/sendForms";
+import animationNumbers from "./modules/animationNumbers";
 
 openingModalWindowCallback();
 smoothScrollTo();
@@ -20,3 +21,4 @@ openingModalFeedback();
 sliderCarousel();
 validateForms();
 sendForms();
+animationNumbers();
