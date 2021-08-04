@@ -3,10 +3,8 @@ const animationNumbers = () => {
     yearElem = document.getElementById('num3'),
     arrivalTimeElem = document.getElementById('num2'),
     staffMembersElem = document.getElementById('num4'),
-    headerWrapper = document.querySelector('.header-wrapper'),
-    numSection = document.querySelector('.num-section'),
-    numSectionTop = numSection.offsetTop,
-    heightHeaderWrapper = headerWrapper.offsetHeight;
+    animationStart = 1100,
+    animationStop = 1500;
 
   const date = new Date();
   const year = date.getFullYear();
@@ -52,9 +50,9 @@ const animationNumbers = () => {
   const animateYear = animateWrapper(yearsWorking, yearElem);
 
   const startAnimate = () => {
-    const scrollTop = window.scrollY;
+    const scrollTop = Math.round(window.scrollY);
 
-    if (scrollTop >= numSectionTop - heightHeaderWrapper) {
+    if (scrollTop >= animationStart && scrollTop <= animationStop) {
       animateNumberOrders();
       animateArrivalTime();
       animateStaffMembers();
